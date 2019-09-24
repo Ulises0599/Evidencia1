@@ -17,7 +17,6 @@ El uso que se le dara a este "facebook" es para contar como una red social donde
 Janeth Medina Aviles.-  
 Jesus Angel Ureña Marin .-
 Ulises Alberto Gomez Mireles .-
-Dante Abraham Valdez Serrano  .- 
 
 
 ****Licencia 
