@@ -14,10 +14,10 @@ El uso que se le dara a este "facebook" es para contar como una red social donde
 
 
 ****Credito 
-Janeth Medina Aviles.-  
-Jesus Angel Ureña Marin .-
-Ulises Alberto Gomez Mireles .-
-Dante Abraham Valdez Serrano  .- 
+Janeth Medina Aviles.-  2866002
+Jesus Angel Ureña Marin .-2771930
+Ulises Alberto Gomez Mireles .- 2789615
+Dante Abraham Valdez Serrano  .- 2788007
 
 
 ****Licencia 
