@@ -26,3 +26,8 @@ Dante Abraham Valdez Serrano.- 2788007
 La licencia que vamos a utilizar seria Licencias GNU donde las siglas significa "Licencia Pública General" 
 es una licencia de software libre, que garantiza a los usuarios finales la libertad de ejecución, estudiar, 
 compartir y modificar el software
+
+Con esta actualizacion que hemos hecho, el programa se puede ejecutar tambien con "Gradle"
+para eso tambien se necesitara correr con el Git 
+El programa se puede correr con los comandos de "gradle run y gradle build"
+Graias a esta actualizacion, va a funcionar bien.
