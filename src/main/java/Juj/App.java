@@ -9,121 +9,104 @@ import org.apache.logging.log4j.Logger;
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
-import facebook4j.User;
+import facebook4j.User; 
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
 public class App {
+
+        // Define a static logger variable so that it references the
+        // Logger instance named "MyApp".
     private static final Logger logger = LogManager.getLogger(App.class);
 
     public String getGreeting() {
         return "Hello world.";
     }
 
-    static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-
-        Facebook facebook = new FacebookFactory().getInstance();
-
-        User me = null;
-        try {
-            me = facebook.getMe();
-        } catch (FacebookException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(" ");
-        System.out.println("Bienvenido: \n");
+    public static void main(final String[] args) {
+        final Facebook facebook = new FacebookFactory().getInstance();
         
-        logger.info(me.getId());
-        logger.info(me.getName());
-        logger.info(me.getEmail());
-
-        int Pregunta;
-
-        System.out.println(" ");
-        System.out.println("*************");
-        System.out.println("Clave para las opciones: ");
-        System.out.println("(A) Obtener las publicaciones del News feed (Home).");
-        System.out.println("(B) Obtener las publicaciones dentro del muro del perfil del usuario.");
-        System.out.println("(C) Hacer una publicación en el muro.");
-        System.out.println("(D) Hacer una publicación con un link en el muro.");
-        System.out.println("(E) Salir");
-        System.out.println("*************");
-        System.out.println(" ");     
-
-            try {
-                do {
-                System.out.print("Ingresa la clave: ");
-
-                String s = sc.next();
-                char Opciones = s.charAt(0);
+        User me = null;
     
-                String details = "";
-    
-                switch (Opciones) {
-    
-                    case 'A':               
-                    logger.debug(facebook.getHome());
-                    break;
-    
-                    case 'B':
-                    logger.debug(facebook.getFeed());
-                    break;
-                    
-                    case 'C':
-                    logger.debug(facebook.postStatusMessage("Hello World from Facebook4J."));
-                    break;
-    
-                    case 'D':              
-                    logger.debug(facebook.postLink(new URL("https://google.com")));
-                    break;
-                    
-                    case 'E':
-                    System.exit(0);    
-                    break;
-    
-                    default:
-                    details = "Valide su opcion. ";
-                    
-                    try {
-                        Thread.sleep(1000);
-                    }
-                    catch(InterruptedException ex) {
-                        Thread.currentThread().interrupt();
-                    }
-                    
-                    System.out.print(" ");
-                    System.out.print("Porfavor valide que su opción escrita sea la correcta");
-                    System.exit(0); 
-                    
-                    break;
-               
-                    }
-                    
-                    try {
-                        Thread.sleep(1000);
-                    }
-                    catch(InterruptedException ex) {
-                        Thread.currentThread().interrupt();
-                    }
-    
-                    Scanner entrada=new Scanner(System.in);
-                    System.out.println(" ");
-                    System.out.println("¿Desea escoger otra opcion? (1 para si, 2 para no): ");
-                    Pregunta=sc.nextInt();
-                    System.out.println(" ");
-                  
-                } while (Pregunta==1); {
-                    System.out.println("Fin del programa");
-                    System.exit(0); 
-                    }
-
-            } catch (FacebookException | MalformedURLException e) {
-                System.out.println("\nNo tienes los permisos adecuados ");
-            }
+    try {
+    me = facebook.getMe();
+    } catch (final FacebookException e){
+    e.printStackTrace();
     }
-}
+
+    System.out.println(" ");
+    System.out.println("Bienvenido usuario: ");
+
+    logger.info(me.getId());
+    logger.info(me.getName());
+    logger.info(me.getEmail());
+    
+    String s = sc.next();
+    char Opciones = s.charAt(0);
+
+    String details = "";
+       
+    int Pregunta;
+
+    System.out.println(" ");
+    System.out.println("***********************************");
+    System.out.println("Clave para las opciones: ");
+    System.out.println("(A) Obtener las publicaciones del News feed");
+    System.out.println("(B) Obtener las publicaciones dentro del muro del perfil.");
+    System.out.println("(C) Hacer una publicación.");
+    System.out.println("(E) Salir");
+    System.out.println("***********************************");
+    System.out.println(" ");
+
+   
+   
+   
+    switch (Opciones) {
+        case 'A':
+        try {
+            logger.debug(facebook.getHome());
+        } catch (final FacebookException e2) {
+            // TODO Auto-generated catch block
+            e2.printStackTrace();
+        }
+            break;
+
+        case 'B':
+        try {
+            logger.debug(facebook.getFeed());
+        } catch (final FacebookException e3) {
+            // TODO Auto-generated catch block
+            e3.printStackTrace();
+        }
+        break;
+
+        case 'C': 
+        try {
+            logger.debug(facebook.postStatusMessage("Hello World from Facebook4J."));
+        } catch (final FacebookException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        break;
+
+        case 'D':
+        System.exit(0);    
+        break;
+
+    default:
+    details = "Valide su opcion. ";
+
+    System.out.print(" ");
+    System.out.print("Porfavor valide que su opción escrita sea la correcta");
+    System.exit(0); 
+    break;
+
+    }  
+    
+    }
+
+} 
