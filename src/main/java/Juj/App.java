@@ -58,7 +58,7 @@ public class App {
     System.out.println("(A) Obtener las publicaciones del News feed");
     System.out.println("(B) Obtener las publicaciones dentro del muro del perfil.");
     System.out.println("(C) Hacer una publicación.");
-    System.out.println("(E) Salir");
+    System.out.println("(D) Salir");
     System.out.println("***********************************");
     System.out.println(" ");
 
